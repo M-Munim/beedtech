@@ -1,0 +1,30 @@
+// NPM
+
+Node pkg manager , nahi pta mujhy 
+node js sy jo ata hy wo module hota 
+npm sy jo ata wo pkg hota
+// googles npm pkg "text to speech"
+
+ ------------------------------
+
+ //TO INSTALL
+
+ npm install or npm i (add dependencies) npm install one-liner-joke
+ we can uninstall 
+ to install particular version -> npm i accessibility@3.0.0
+
+ ------------------------------
+
+ node module
+
+ -----------------------
+
+ dependencies (packages and packages ki dependencies)
+ devdependencies (aysy pkg jo sirf development k waqt kaam aay gy,
+ jb app bn jai or deploy ho jai to no need) npm i nodemon --save-dev
+ 
+ -------------------------
+
+ Database > collection > document
+
+ mongoose.connect > model create > CREATE

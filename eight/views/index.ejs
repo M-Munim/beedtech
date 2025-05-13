@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-full h-screen bg-zinc-900 p-10">
+        <a href="/read" class="text-white mb-3">back to home</a>
+        <form action="/create" method="post" class="mt-5">
+            <input type="text" placeholder="Name" name="name" class="p-2">
+
+            <input type="email" placeholder="Email" name="email" class="p-2">
+
+            <input type="text" placeholder="Image URL" name="image" class="p-2">
+
+            <input type="submit" value="Submit" class="bg-white text-black p-2 rounded">
+        </form>
+    </div>
+</body>
+
+</html>

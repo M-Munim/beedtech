@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-full h-screen bg-zinc-900 p-10 text-white">
+        <h1 class="text-white text-3xl">
+            <%= data.username %>
+        </h1>
+        <h5 class="">Create a post.</h5>
+
+        <form action="/post" method="post">
+            <textarea id="" name="content" cols="30" rows="10" class="text-blue-600"></textarea>
+            <input type="submit">
+        </form>
+        <a href="/logout" class="text-blue-600">Logout</a>
+
+        <div class="posts mt-5">
+            <h3 class="text-3xl">Your Posts</h3>
+            <div class="postcontainer">
+                <% data.posts.reverse().forEach(post=> { %>
+                    <h4>
+                        <%= data.username %>
+                    </h4>
+                    <p>
+                        <%= post.content %>
+                    </p>
+
+                    <small>
+                        <%= post.likes.length %>
+                    </small>
+                    <div class="">
+                        <a href="/like/<%= post._id %>">
+                            <%= post.likes.indexOf(data._id)===-1 ? 'Like' : 'Unlike' %>
+                        </a>
+                        <a href="/edit/<%= post._id %>">Edit</a>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

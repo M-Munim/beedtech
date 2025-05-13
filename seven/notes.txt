@@ -1,0 +1,4 @@
+npm init -y
+
+notes taking app 
+

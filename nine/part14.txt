@@ -1,0 +1,90 @@
+authentication and authorization 
+
+user ko data deny sy pehly chek krna k user hai kon - authentication
+
+authorization to perform some tasks which are only allowed to be executed by admin
+
+------------------------------------------
+1. cookie kesy set kren and read kre 
+2. bcrypt kesy use kren 
+    password => qbttxpse, SHA-256
+3. jwt 
+
+------------------------------------------
+npm init -y 
+npm i jsonwebtoken bcrypt express cookie-parser
+
+
+
+===========================
+1. cookie kesy set kren and read kre 
+
+const express = require('express');
+const cookieParser = require('cookie-parser');
+
+const app = express();
+
+app.use(cookieParser());
+
+app.get('/', (req, res) => {
+    res.cookie('username', 'munim')
+    res.send('Hello World')
+})
+
+app.get('/read', (req, res) => {
+    res.send("hwllo ")
+    console.log(req.cookies)
+})
+
+app.listen(3000)
+
+===========================
+
+2. bcrypt kesy use kren 
+
+const express = require('express');
+const bcrypt = require('bcrypt');
+
+const app = express();
+
+app.get('/', (req, res) => {
+    // bcrypt.genSalt(10, function (err, salt) {
+    //     bcrypt.hash("munim_124", salt, function (err, hash) {
+    //         console.log(hash)
+    //     });
+    // });
+
+    bcrypt.compare("munim_124", "$2b$10$1R1OvI264NKXNg5t.hqNteJ90iflv4IItN5a6D4n8L/.8xdCre7Y.", function (err, result) {
+        console.log(result)
+    });
+    res.send('Hello World')
+})
+
+app.listen(3000)
+
+===========================
+
+3. jwt 
+
+const express = require('express');
+const jwt = require('jsonwebtoken');
+cookieParser = require('cookie-parser');
+
+const app = express();
+app.use(cookieParser());
+
+app.get('/', (req, res) => {
+    let token = jwt.sign({ name: 'munim' }, 'secret');
+    res.cookie('token', token);
+    console.log(token)
+    res.send('Hello World')
+})
+
+app.get('/profile', (req, res) => {
+    // console.log(req.cookies.token)
+    let result = jwt.verify(req.cookies.token, 'secret');
+    console.log(result)
+    res.send("user")
+})
+
+app.listen(3000)

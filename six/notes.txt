@@ -1,0 +1,40 @@
+1. initialize the proj -> npm init -y
+2. express install
+
+-------------------------------------------------
+
+setting up parsers for form :
+
+const express = require('express');
+
+const app = express()
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+    res.send('Hello Wdorld')
+})
+
+app.listen(3000)
+
+-------------------------------------------------
+setting up ejs for ejs pages(html with dynamic powers)
+
+1. npm i ejs
+2. setup ejs as view engine
+    app.set('view engine', 'ejs')
+
+3. change res.send to res.render like that res.render('index.ejs')
+4. make folder views/index.ejs
+
+-------------------------------------------------
+setting up public static files
+
+app.use(express.static(Path.join(__dirname, 'public')))
+
+dynamic routing
+    hoe to get data coming from fe at be
+    app.get('/profile/:munim', (req, res) => {
+    res.send(req.params.munim)
+    })

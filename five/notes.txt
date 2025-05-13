@@ -1,0 +1,16 @@
+form handling and working with the forms 
+1. handle backend process of forms and making sure the data coming from any frontend lib, framework, template engine, we still handle it in the
+backend 
+
+----------------------
+npm i cookie-parser
+
+----------------------
+ hum log kuch bhi data fe pr browser pr rakh skty hai and jab bhi app kuch bhi req be par karo gy wo fe par saved data automatically be par chala jaiga, the connection is session fe (cookie) ---> be
+
+ data jo apk fe py save hy 
+
+ ----------------------
+ your data to blob(unreadable stream maybe hexadecimal) raita bna hoga
+1. app.use(express.json());
+2. app.use(express.urlencoded({ extended: true }));

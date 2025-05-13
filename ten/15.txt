@@ -1,0 +1,13 @@
+1. npm init -y
+2. npm i express jsonwebtoken bcrypt cookie-parser mongoose
+3. npm i ejs for server side rendering
+
+-----------------------------------------------------
+1. create user account 
+    mongoose
+    schema
+    model
+    userCreate -> password -> hash
+    jwt token -> cookie
+
+    login -> token -> decrypt -> email
