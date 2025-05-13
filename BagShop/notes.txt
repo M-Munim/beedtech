@@ -1,0 +1,18 @@
+1. userModel
+- fullname
+- email
+- password 
+- cart
+- isadmin
+- orders
+- contact
+- picture
+
+2. productModel
+- image
+- name
+- price
+- discount
+- bgColor
+- panelColor
+- textColor
